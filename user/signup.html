@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>RegistrationForm_v1 by Colorlib</title>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+
+    <!-- MATERIAL DESIGN ICONIC FONT -->
+    <link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+
+    <!-- STYLE CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="wrapper" style="background-image: url('images/bg-registration-form-1.jpg'); background-size: cover; height: 100vh;">
+        <div class="inner">
+            <div class="image-holder">
+                <img src="images/registration-form-1.jpg" alt="">
+            </div>
+            <form>
+                <h3>Registration Form</h3>
+                <div class="form-group">
+                    <input type="text" placeholder="First Name" class="form-control" required>
+                    <input type="text" placeholder="Last Name" class="form-control" required>
+                </div>
+
+                <div class="form-wrapper">
+                    <input type="text" placeholder="Email Address" class="form-control" required>
+                    <i class="zmdi zmdi-email"></i>
+                </div>
+
+                <div class="form-wrapper">
+                    <input type="password" placeholder="Password" class="form-control" required>
+                    <i class="zmdi zmdi-lock"></i>
+                </div>
+                <div class="form-wrapper">
+                    <input type="password" placeholder="phone " class="form-control" required>
+                    <i class="zmdi zmdi-lock"></i>
+                </div>
+                <div class="form-wrapper">
+                    <a href="index.html">Already have account?</a>
+                </div>
+                <button type="submit">Register
+						<i class="zmdi zmdi-arrow-right"></i>
+					</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+<script>
+    const form = document.querySelector("form");
+
+    form.addEventListener("submit", async(e) => {
+        e.preventDefault()
+
+        const data = {
+            fname: e.target[0].value,
+            lname: e.target[1].value,
+            email: e.target[2].value,
+            password: e.target[3].value,
+            phone: e.target[4].value
+
+        }
+        const response = await fetch("http://localhost:5000/library/adduser", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
+        if (response.status == 200) {
+            window.location.href = "http://127.0.0.1:5501/user_dashboard.html";
+            //alert("server  bash error");
+        } else {
+            alert("server error");
+        }
+    })
+</script>
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="front_page.css">
+    <title>Library Management System </title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <nav class="nav">
+            <div class="nav-logo">
+                <p>Library Management System</p>
+            </div>
+            <div class="nav-menu" id="navMenu">
+                <ul class="nav-class">
+                    <li><a href="user/index.html" class="link ">User Login</a></li>
+                    <li><a href="admin/admin_login.html" class="link ">Admin Login</a></li>
+                    <!-- <li><a href="signup.html" class="link">Register</a></li> -->
+
+                </ul>
+
+            </div>
+            <!-- <div class="nav-button">
+            <button class="btn white-btn" id="loginBtn" onclick="login()">Sign In</button>
+            <button class="btn" id="registerBtn" onclick="register()">Sign Up</button>
+        </div>
+        <div class="nav-menu-btn">
+            <i class="bx bx-menu" onclick="myMenuFunction()"></i> -->
+            <!-- </div> -->
+        </nav>
+        <br>
+
+
+
+
+        <section>
+
+
+            <div class="carousel-item active" style="background-image: url(assets/img/slide/pexels-pixabay-260922.jpg);">
+                <div class="carousel-container">
+                    <div class="carousel-content">
+                        <h1 class="animate"><span>Welcome to Library Management</span> </h1>
+                        <P><span> the world of books meets the ease of management.</span></P>
+
+                    </div>
+                </div>
+            </div>
+
+            </secton>
+
+            <script>
+                function myMenuFunction() {
+                    var i = document.getElementById("navMenu");
+
+                    if (i.className === "nav-menu") {
+                        i.className += " responsive";
+                    } else {
+                        i.className = "nav-menu";
+                    }
+                }
+            </script>
+
+            <script>
+                var a = document.getElementById("loginBtn");
+                var b = document.getElementById("registerBtn");
+                var x = document.getElementById("login");
+                var y = document.getElementById("register");
+
+                function login() {
+                    x.style.left = "4px";
+                    y.style.right = "-520px";
+                    a.className += " white-btn";
+                    b.className = "btn";
+                    x.style.opacity = 1;
+                    y.style.opacity = 0;
+                }
+
+                function register() {
+                    x.style.left = "-510px";
+                    y.style.right = "5px";
+                    a.className = "btn";
+                    b.className += " white-btn";
+                    x.style.opacity = 0;
+                    y.style.opacity = 1;
+                }
+            </script>
+</body>
+
+</html>

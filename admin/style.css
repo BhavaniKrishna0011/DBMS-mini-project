@@ -1,0 +1,25 @@
+/* Basic table styling */
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+th {
+    text-align: left;
+}
+
+
+/* Optional responsive styles */
+
+@media (max-width: 768px) {
+    table {
+        font-size: 0.8em;
+    }
+}
